@@ -121,7 +121,7 @@ function Contact() {
             <p className="flex items-center justify-center gap-2">
               <FaGlobe />
               <a
-                href="https://oussama-portfolio.com"
+                href="https://portfolio-oussama-9ysiazlv4-oussamas-projects-d5f53f05.vercel.app/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="underline hover:text-blue-400"
