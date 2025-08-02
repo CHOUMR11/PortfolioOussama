@@ -60,7 +60,7 @@ function Projects() {
           className="text-5xl font-extrabold text-center text-gray-900 mb-16 tracking-tight drop-shadow-md"
           data-aos="fade-up"
         >
-          Projets
+         Mes Projets
         </h2>
 
         {/* Liste horizontale avec scroll */}
