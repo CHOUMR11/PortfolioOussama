@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import {
   FaGithub,
   FaLinkedin,
@@ -11,12 +11,32 @@ import {
   FaBriefcase,
 } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md';
+import emailjs from '@emailjs/browser';
 import contactBg from 'src/assets/Contact.jpeg'; // Assure-toi que ce chemin est correct
 
 function Contact() {
-  const handleClick = (url, platform) => {
-    console.log(`Clic sur ${platform}, redirection vers ${url}`);
-    window.open(url, '_blank', 'noopener,noreferrer');
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        'service_7z0wpi5',         // <-- Remplace par ton vrai service ID
+        'template_01qmo4e',        // <-- Remplace par ton template ID
+        form.current,
+        '2LGb7TNUcJM3QyUio'          // <-- Remplace par ta clé publique
+      )
+      .then(
+        (result) => {
+          alert('Message envoyé avec succès !');
+          e.target.reset();
+        },
+        (error) => {
+          alert('Une erreur est survenue, réessaye plus tard.');
+          console.error(error.text);
+        }
+      );
   };
 
   return (
@@ -35,19 +55,31 @@ function Contact() {
         </h2>
 
         <div className="max-w-3xl mx-auto bg-white bg-opacity-10 backdrop-blur-md rounded-2xl p-8 shadow-lg">
-          <form className="space-y-4" data-aos="fade-up" data-aos-delay="100">
+          <form
+            ref={form}
+            onSubmit={sendEmail}
+            className="space-y-4"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
             <input
               type="text"
+              name="user_name"
               placeholder="Nom"
+              required
               className="w-full p-3 rounded-lg bg-gray-800 text-white border border-gray-600 focus:outline-none focus:border-blue-500"
             />
             <input
               type="email"
+              name="user_email"
               placeholder="Email"
+              required
               className="w-full p-3 rounded-lg bg-gray-800 text-white border border-gray-600 focus:outline-none focus:border-blue-500"
             />
             <textarea
+              name="message"
               placeholder="Message"
+              required
               className="w-full p-3 rounded-lg bg-gray-800 text-white border border-gray-600 focus:outline-none focus:border-blue-500"
               rows="5"
             ></textarea>
