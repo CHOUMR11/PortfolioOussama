@@ -22,10 +22,10 @@ function Contact() {
 
     emailjs
       .sendForm(
-        'service_7z0wpi5',         // <-- Remplace par ton vrai service ID
-        'template_01qmo4e',        // <-- Remplace par ton template ID
+        'service_7z0wpi5',   // Remplace par ton vrai service ID EmailJS
+        'template_01qmo4e',  // Remplace par ton template ID EmailJS
         form.current,
-        '2LGb7TNUcJM3QyUio'          // <-- Remplace par ta clé publique
+        '2LGb7TNUcJM3QyUio' // Remplace par ta clé publique EmailJS
       )
       .then(
         (result) => {
@@ -47,7 +47,10 @@ function Contact() {
         style={{ backgroundImage: `url(${contactBg})` }}
         aria-hidden="true"
       />
-      <div className="absolute inset-0 bg-black bg-opacity-60 backdrop-blur-sm" aria-hidden="true" />
+      <div
+        className="absolute inset-0 bg-black bg-opacity-60 backdrop-blur-sm"
+        aria-hidden="true"
+      />
 
       <div className="relative container mx-auto px-6">
         <h2 className="text-4xl font-bold text-center mb-12" data-aos="fade-up">
@@ -80,9 +83,9 @@ function Contact() {
               name="message"
               placeholder="Message"
               required
+              rows={5}
               className="w-full p-3 rounded-lg bg-gray-800 text-white border border-gray-600 focus:outline-none focus:border-blue-500"
-              rows="5"
-            ></textarea>
+            />
             <button
               type="submit"
               className="w-full bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-indigo-600 hover:to-blue-500 text-white p-3 rounded-lg font-semibold transition-colors"
@@ -119,19 +122,16 @@ function Contact() {
               <FaGlobe />
               <a
                 href="https://oussama-portfolio.com"
-                className="underline hover:text-blue-400"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="underline hover:text-blue-400"
               >
                 www.oussama-portfolio.com
               </a>
             </p>
             <p className="flex items-center justify-center gap-2">
               <MdEmail />
-              <a
-                href="mailto:chammaroussama@gmail.com"
-                className="underline hover:text-blue-400"
-              >
+              <a href="mailto:chammaroussama@gmail.com" className="underline hover:text-blue-400">
                 chammaroussama@gmail.com
               </a>
             </p>
