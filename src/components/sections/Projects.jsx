@@ -6,32 +6,38 @@ import smartMagImg from '../../assets/SchoolManagementSystem-master.png';
 import digiFoodImg from 'src/assets/digifood.png';
 import coachProImg from 'src/assets/coachpro.png';
 import project4Img from '../../assets/E-commerce.png';
-
+import project5Img from '../../assets/Portfolio.png';
 function Projects() {
   const projects = [
     {
-      title: 'SmartMag',
-      description: 'Une application web pour la gestion de magazines intelligents.',
-      repo: 'https://github.com/oussama123/smartmag',
+      title: 'SschoolManagementSchool',
+      description: 'Une application web pour la gestion d'un école.',
+      repo: 'https://github.com/CHOUMR11/BackendHotelSystemMangemen',
       image: smartMagImg,
     },
     {
       title: 'DigiFood',
       description: 'Une application mobile pour commander des repas en ligne.',
-      repo: 'https://github.com/oussama123/digifood',
+      repo: 'https://github.com/CHOUMR11/Frontend30.8Creperie',
       image: digiFoodImg,
     },
     {
       title: 'CoachPro',
       description: 'Une plateforme pour les coachs de football.',
-      repo: 'https://github.com/oussama123/coachpro',
+      repo: 'https://github.com/CHOUMR11/CoachPro',
       image: coachProImg,
     },
     {
       title: 'E-commerce',
       description: 'Une plateforme de commerce électronique moderne.',
-      repo: 'https://github.com/oussama123/projet4',
+      repo: 'https://frontend-ecommerceversion0.vercel.app/',
       image: project4Img,
+    },
+{
+      title: 'Portfolio',
+      description: 'Une plateforme de commerce électronique moderne.',
+      repo: 'https://github.com/CHOUMR11/PortfolioOussama',
+      image: project5Img,
     },
   ];
 
