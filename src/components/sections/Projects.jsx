@@ -1,42 +1,60 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FaGithub } from 'react-icons/fa';
 import projectsBg from 'src/assets/Projects.jpeg';
-
 import smartMagImg from '../../assets/SchoolManagementSystem-master.png';
 import digiFoodImg from 'src/assets/digifood.png';
 import coachProImg from 'src/assets/coachpro.png';
 import project4Img from '../../assets/E-commerce.png';
 import project5Img from '../../assets/Portfolio.png';
+
 function Projects() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  const openModal = (image) => {
+    setSelectedImage(image);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedImage(null);
+  };
+
   const projects = [
     {
-      title: 'SschoolManagementSchool',
-      description: 'Une application web pour la gestion d un école.',
-      repo: 'https://github.com/CHOUMR11/BackendHotelSystemMangemen',
+      title: 'SchoolManagementSystem',
+      description: "Une application web pour la gestion d'une école.",
+      repo: 'https://github.com/CHOUMR11/SchoolManagementSystem',
+      demo: 'https://school-management.vercel.app/',
       image: smartMagImg,
     },
     {
       title: 'DigiFood',
       description: 'Une application mobile pour commander des repas en ligne.',
       repo: 'https://github.com/CHOUMR11/Frontend30.8Creperie',
+      demo: 'https://digifood.vercel.app/',
       image: digiFoodImg,
     },
     {
       title: 'CoachPro',
       description: 'Une plateforme pour les coachs de football.',
       repo: 'https://github.com/CHOUMR11/CoachPro',
+      demo: 'https://coachpro.vercel.app/',
       image: coachProImg,
     },
     {
       title: 'E-commerce',
       description: 'Une plateforme de commerce électronique moderne.',
-      repo: 'https://frontend-ecommerceversion0.vercel.app/',
+      repo: 'https://github.com/CHOUMR11/EcommerceProject',
+      demo: 'https://frontend-ecommerceversion0.vercel.app/',
       image: project4Img,
     },
-{
+    {
       title: 'Portfolio',
-      description: 'Une plateforme de commerce électronique moderne.',
+      description: 'Mon portfolio personnel.',
       repo: 'https://github.com/CHOUMR11/PortfolioOussama',
+      demo: 'https://portfolio-oussama.vercel.app/',
       image: project5Img,
     },
   ];
@@ -80,6 +98,7 @@ function Projects() {
                   src={project.image}
                   alt={project.title}
                   className="w-full h-full object-cover rounded-t-3xl transition-transform duration-500 group-hover:scale-110"
+                  onClick={() => openModal(project.image)}
                 />
                 <a
                   href={project.repo}
@@ -102,22 +121,70 @@ function Projects() {
                     {project.description}
                   </p>
                 </div>
-                <a
-                  href={project.repo}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block w-full text-center px-4 sm:px-6 lg:px-8 py-2 sm:py-3 bg-gradient-to-r from-blue-600 to-indigo-700 text-white rounded-full shadow-lg font-semibold tracking-wide hover:from-indigo-700 hover:to-blue-600 transition-colors duration-300 text-sm sm:text-base"
-                >
-                  Voir le dépôt
-                </a>
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <a
+                    href={project.repo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full sm:w-auto text-center px-4 py-2 bg-black text-white rounded-full font-semibold hover:bg-gray-800 transition"
+                  >
+                    <FaGithub className="inline mr-2" />
+                    Voir le dépôt
+                  </a>
+                  {project.demo && (
+                    <a
+                      href={project.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full sm:w-auto text-center px-4 py-2 bg-blue-600 text-white rounded-full font-semibold hover:bg-blue-700 transition"
+                    >
+                      🔗 Voir la démo
+                    </a>
+                  )}
+                </div>
               </div>
             </article>
           ))}
         </div>
       </div>
+
+      {/* Modal for enlarged image */}
+      {isModalOpen && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50"
+          onClick={closeModal}
+        >
+          <div className="relative max-w-4xl w-full p-4">
+            <img
+              src={selectedImage}
+              alt="Enlarged project"
+              className="w-full h-auto rounded-lg max-h-[80vh] object-contain"
+            />
+            <button
+              className="absolute top-2 right-2 bg-white bg-opacity-90 rounded-full p-2 text-gray-800 shadow-lg hover:bg-gray-200 transition"
+              onClick={closeModal}
+              aria-label="Fermer l'image"
+            >
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
 
 export default Projects;
-
