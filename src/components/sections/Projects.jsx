@@ -54,7 +54,7 @@ function Projects() {
       title: 'Portfolio',
       description: 'Mon portfolio personnel.',
       repo: 'https://github.com/CHOUMR11/PortfolioOussama',
-      demo: 'https://portfolio-oussama.vercel.app/',
+      demo: 'https://portfolio-oussama-phi.vercel.app/',
       image: project5Img,
     },
   ];
