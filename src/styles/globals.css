@@ -1,17 +1,145 @@
 @tailwind base;
-   @tailwind components;
-   @tailwind utilities;
+@tailwind components;
+@tailwind utilities;
 
-   /* Garantir que le footer et ses boutons sont interactifs */
-   footer {
-     position: fixed;
-     bottom: 0;
-     left: 0;
-     width: 100%;
-     z-index: 50;
-   }
+/* Styles de base pour la responsivité */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+  }
+}
 
-   footer button {
-     pointer-events: auto;
-     z-index: 10;
-   }
+/* Garantir que le footer et ses boutons sont interactifs */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 50;
+}
+
+footer button {
+  pointer-events: auto;
+  z-index: 10;
+}
+
+/* Amélioration de l'accessibilité et de la responsivité */
+@layer utilities {
+  /* Espacement responsive pour le contenu principal */
+  .main-content {
+    padding-bottom: 4rem; /* Espace pour le footer fixe */
+  }
+  
+  @screen sm {
+    .main-content {
+      padding-bottom: 5rem;
+    }
+  }
+  
+  /* Amélioration des transitions */
+  .smooth-transition {
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* Styles pour les éléments interactifs sur mobile */
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Amélioration de la lisibilité sur petits écrans */
+  .text-responsive {
+    font-size: clamp(0.875rem, 2.5vw, 1rem);
+  }
+  
+  /* Container responsive personnalisé */
+  .container-responsive {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  @screen sm {
+    .container-responsive {
+      max-width: 640px;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+  
+  @screen md {
+    .container-responsive {
+      max-width: 768px;
+    }
+  }
+  
+  @screen lg {
+    .container-responsive {
+      max-width: 1024px;
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+  
+  @screen xl {
+    .container-responsive {
+      max-width: 1280px;
+    }
+  }
+  
+  @screen 2xl {
+    .container-responsive {
+      max-width: 1536px;
+    }
+  }
+}
+
+/* Amélioration des animations AOS pour mobile */
+@media (max-width: 768px) {
+  [data-aos] {
+    transition-duration: 0.4s !important;
+  }
+}
+
+/* Styles pour les images responsives */
+.responsive-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Amélioration du contraste pour l'accessibilité */
+.high-contrast {
+  filter: contrast(1.1);
+}
+
+/* Styles pour les formulaires responsifs */
+.form-input {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid #374151;
+  background-color: #1f2937;
+  color: white;
+  transition: border-color 0.3s ease;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+@screen sm {
+  .form-input {
+    padding: 1rem;
+  }
+}
+
