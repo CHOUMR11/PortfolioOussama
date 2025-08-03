@@ -23,12 +23,12 @@ function Hero() {
       <div className="absolute inset-0 bg-black opacity-60" aria-hidden="true" />
 
       {/* Contenu principal */}
-      <div className="container mx-auto px-6 text-center relative z-10" data-aos="fade-up">
-        <h1 className="text-5xl md:text-6xl font-extrabold mb-4 tracking-tight">
+      <div className="container mx-auto px-4 sm:px-6 text-center relative z-10" data-aos="fade-up">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 tracking-tight">
           Oussama Chammar
         </h1>
 
-        <p className="text-xl md:text-2xl mb-8 h-24 font-medium leading-relaxed">
+        <div className="text-base sm:text-lg md:text-xl lg:text-2xl mb-6 sm:mb-8 min-h-[80px] sm:min-h-[100px] md:min-h-[120px] font-medium leading-relaxed">
           <Typewriter
             words={[
               "Ingénieur Full-Stack Web & Mobile | ESSAT Gabès – EUR-ACE | ASIIN",
@@ -42,61 +42,61 @@ function Hero() {
             deleteSpeed={50}
             delaySpeed={1500}
           />
-        </p>
+        </div>
 
         {/* Boutons */}
-        <div className="flex justify-center flex-wrap gap-4 mb-10">
+        <div className="flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-4 mb-8 sm:mb-10">
           <a
             href="/CV-Oussama.pdf"
             download
-            className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-semibold transition-colors"
+            className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-semibold transition-colors text-center"
           >
             Télécharger le CV
           </a>
           <a
             href="#contact"
-            className="border border-white text-white hover:bg-white hover:text-gray-900 px-6 py-3 rounded-full font-semibold transition-colors"
+            className="w-full sm:w-auto border border-white text-white hover:bg-white hover:text-gray-900 px-6 py-3 rounded-full font-semibold transition-colors text-center"
           >
             Me Contacter
           </a>
         </div>
 
         {/* Réseaux sociaux */}
-        <div className="flex justify-center space-x-4">
+        <div className="flex justify-center items-center space-x-4 sm:space-x-6">
           <button
             onClick={() => handleClick('https://github.com/CHOUMR11', 'GitHub')}
             aria-label="GitHub"
-            className="text-gray-300 hover:text-blue-400 transition-colors"
+            className="text-gray-300 hover:text-blue-400 transition-colors p-2 rounded-full hover:bg-white hover:bg-opacity-10"
           >
-            <FaGithub className="text-3xl" />
+            <FaGithub className="text-2xl sm:text-3xl" />
           </button>
           <button
             onClick={() => handleClick('https://www.linkedin.com/in/oussama-chammar-687919240', 'LinkedIn')}
             aria-label="LinkedIn"
-            className="text-gray-300 hover:text-blue-400 transition-colors"
+            className="text-gray-300 hover:text-blue-400 transition-colors p-2 rounded-full hover:bg-white hover:bg-opacity-10"
           >
-            <FaLinkedin className="text-3xl" />
+            <FaLinkedin className="text-2xl sm:text-3xl" />
           </button>
           <button
             onClick={() => handleClick('https://www.instagram.com/oussamachammar?igsh=eTVvZHRuNjR5cmJ4', 'Instagram')}
             aria-label="Instagram"
-            className="text-gray-300 hover:text-blue-400 transition-colors"
+            className="text-gray-300 hover:text-blue-400 transition-colors p-2 rounded-full hover:bg-white hover:bg-opacity-10"
           >
-            <FaInstagram className="text-3xl" />
+            <FaInstagram className="text-2xl sm:text-3xl" />
           </button>
           <button
             onClick={() => handleClick('https://wa.me/+21694220760', 'WhatsApp')}
             aria-label="WhatsApp"
-            className="text-gray-300 hover:text-blue-400 transition-colors"
+            className="text-gray-300 hover:text-blue-400 transition-colors p-2 rounded-full hover:bg-white hover:bg-opacity-10"
           >
-            <FaWhatsapp className="text-3xl" />
+            <FaWhatsapp className="text-2xl sm:text-3xl" />
           </button>
           <button
             onClick={() => handleClick('https://www.facebook.com/oussama.chammar.5/', 'Facebook')}
             aria-label="Facebook"
-            className="text-gray-300 hover:text-blue-400 transition-colors"
+            className="text-gray-300 hover:text-blue-400 transition-colors p-2 rounded-full hover:bg-white hover:bg-opacity-10"
           >
-            <FaFacebook className="text-3xl" />
+            <FaFacebook className="text-2xl sm:text-3xl" />
           </button>
         </div>
       </div>
@@ -105,3 +105,4 @@ function Hero() {
 }
 
 export default Hero;
+
