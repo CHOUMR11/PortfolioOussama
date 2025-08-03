@@ -39,7 +39,7 @@ function Projects() {
     {
       title: 'CoachPro',
       description: 'Une plateforme pour les coachs de football.',
-      repo: 'https://github.com/CHOUMR11/CoachPro',
+      repo: 'https://github.com/CHOUMR11/CoachPro', // Fixed: changed github to repo
       demo: 'https://coachpro.vercel.app/',
       image: coachProImg,
     },
@@ -64,7 +64,6 @@ function Projects() {
       className="relative bg-gray-50 py-16 sm:py-20 lg:py-24 overflow-hidden"
       id="projects"
     >
-      {/* Background image + subtle overlay */}
       <div
         className="absolute inset-0 bg-cover bg-center filter brightness-75 scale-105 transition-transform duration-700 ease-in-out"
         style={{ backgroundImage: `url(${projectsBg})` }}
@@ -83,7 +82,6 @@ function Projects() {
           Mes Projets
         </h2>
 
-        {/* Grille responsive */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-8 lg:gap-10">
           {projects.map((project, index) => (
             <article
@@ -92,7 +90,6 @@ function Projects() {
               data-aos="fade-up"
               data-aos-delay={index * 150}
             >
-              {/* Image */}
               <div className="overflow-hidden rounded-t-3xl cursor-pointer relative h-48 sm:h-52 lg:h-48">
                 <img
                   src={project.image}
@@ -100,18 +97,19 @@ function Projects() {
                   className="w-full h-full object-cover rounded-t-3xl transition-transform duration-500 group-hover:scale-110"
                   onClick={() => openModal(project.image)}
                 />
-                <a
-                  href={project.repo}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="absolute top-3 right-3 bg-white bg-opacity-90 rounded-full p-2 sm:p-3 text-gray-800 shadow-lg opacity-90 hover:opacity-100 transition-opacity duration-300"
-                  aria-label={`Voir dépôt ${project.title}`}
-                >
-                  <FaGithub className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6" />
-                </a>
+                {project.repo && (
+                  <a
+                    href={project.repo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="absolute top-3 right-3 bg-white bg-opacity-90 rounded-full p-2 sm:p-3 text-gray-800 shadow-lg opacity-90 hover:opacity-100 transition-opacity duration-300"
+                    aria-label={`Voir dépôt ${project.title}`}
+                  >
+                    <FaGithub className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6" />
+                  </a>
+                )}
               </div>
 
-              {/* Contenu */}
               <div className="p-4 sm:p-5 lg:p-6 flex flex-col justify-between h-auto">
                 <div>
                   <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-gray-900 mb-2 sm:mb-3">
@@ -122,15 +120,17 @@ function Projects() {
                   </p>
                 </div>
                 <div className="flex flex-col sm:flex-row gap-3">
-                  <a
-                    href={project.repo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full sm:w-auto text-center px-4 py-2 bg-black text-white rounded-full font-semibold hover:bg-gray-800 transition"
-                  >
-                    <FaGithub className="inline mr-2" />
-                    Voir le dépôt
-                  </a>
+                  {project.repo && (
+                    <a
+                      href={project.repo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full sm:w-auto text-center px-4 py-2 bg-black text-white rounded-full font-semibold hover:bg-gray-800 transition"
+                    >
+                      <FaGithub className="inline mr-2" />
+                      Voir le dépôt
+                    </a>
+                  )}
                   {project.demo && (
                     <a
                       href={project.demo}
@@ -148,7 +148,6 @@ function Projects() {
         </div>
       </div>
 
-      {/* Modal for enlarged image */}
       {isModalOpen && (
         <div
           className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50"
