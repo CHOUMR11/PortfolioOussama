@@ -11,7 +11,7 @@ function Projects() {
   const projects = [
     {
       title: 'SschoolManagementSchool',
-      description: 'Une application web pour la gestion d'un école.',
+      description: 'Une application web pour la gestion d un école.',
       repo: 'https://github.com/CHOUMR11/BackendHotelSystemMangemen',
       image: smartMagImg,
     },
