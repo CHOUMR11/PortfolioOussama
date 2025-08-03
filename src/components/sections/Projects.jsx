@@ -26,14 +26,14 @@ function Projects() {
       title: 'School-Management',
       description: "Une application web pour la gestion d'une école.",
       repo: 'https://github.com/CHOUMR11/SchoolManagementSystem',
-      demo: 'https://school-management.vercel.app/',
+      demo: 'https://www.devart.com/academy/',
       image: smartMagImg,
     },
     {
       title: 'DigiFood',
       description: 'Une application mobile pour commander des repas en ligne.',
       repo: 'https://github.com/CHOUMR11/Frontend30.8Creperie',
-      demo: 'https://digifood.vercel.app/',
+      demo: 'https://frontend30-8-creperie-ktgv.vercel.app/client/menu',
       image: digiFoodImg,
     },
     {
@@ -47,7 +47,7 @@ function Projects() {
       title: 'E-commerce',
       description: 'Une plateforme de commerce électronique moderne.',
       repo: 'https://github.com/CHOUMR11/EcommerceProject',
-      demo: 'https://frontend-ecommerceversion0.vercel.app/',
+      demo: 'https://frontend-ecommerceversion0.vercel.app/sc',
       image: project4Img,
     },
     {
