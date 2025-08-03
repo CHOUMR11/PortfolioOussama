@@ -134,7 +134,7 @@ function Contact() {
                 rel="noopener noreferrer"
                 className="underline hover:text-blue-400 break-all sm:break-normal"
               >
-                www.oussama-portfolio.com
+                https://portfolio-oussama-murex.vercel.app/
               </a>
             </div>
             
