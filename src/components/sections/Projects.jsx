@@ -23,7 +23,7 @@ function Projects() {
 
   const projects = [
     {
-      title: 'SchoolManagementSystem',
+      title: 'School-Management',
       description: "Une application web pour la gestion d'une école.",
       repo: 'https://github.com/CHOUMR11/SchoolManagementSystem',
       demo: 'https://school-management.vercel.app/',
